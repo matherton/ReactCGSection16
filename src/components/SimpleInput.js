@@ -20,15 +20,13 @@ const SimpleInput = (props) => {
 
     setEnteredNameTouched(true);
 
-    if (enteredName.trim() === "") {
-      setEnteredNameIsValid(false);
+    if (!enteredNameIsValid) {
       return;
     }
 
-    setEnteredNameIsValid(true);
-
     //nameInputRef.current.value = ""; Not ideal don't manipulate the DOM
     setEnteredName("");
+    setEnteredNameTouched(false); //setEnteredNameTouched back to false at end of function so that warning is not displayed by default when form is first run.
   };
 
   const inputNameClasses = nameInputIsInvalid
