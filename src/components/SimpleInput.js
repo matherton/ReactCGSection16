@@ -15,7 +15,7 @@ const SimpleInput = (props) => {
 
   let formIsValid = false;
 
-  if (enteredNameIsValid) {
+  if (enteredNameIsValid && enteredEmailIsValid) {
     formIsValid = true;
   }
 
@@ -32,7 +32,7 @@ const SimpleInput = (props) => {
   };
 
   const emailInputBlurHandler = (event) => {
-    setEnteredEmailTouched(event.target.value);
+    setEnteredEmailTouched(true);
   };
 
   const formSubmissionHandler = (event) => {
