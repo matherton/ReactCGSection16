@@ -83,7 +83,7 @@ const SimpleInput = (props) => {
           onBlur={emailInputBlurHandler}
           value={enteredEmail}
         />
-        {nameInputIsInvalid && (
+        {enteredEmailIsInvalid && (
           <p className="error-text">Please enter a valid email</p>
         )}
       </div>
