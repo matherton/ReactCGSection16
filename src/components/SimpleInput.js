@@ -44,6 +44,7 @@ const SimpleInput = (props) => {
     //nameInputRef.current.value = ""; Not ideal don't manipulate the DOM
     setEnteredName("");
     setEnteredNameTouched(false); //setEnteredNameTouched back to false at end of function so that warning is not displayed by default when form is first run.
+    setEnteredEmail("");
   };
 
   const inputNameClasses = nameInputIsInvalid
@@ -72,7 +73,7 @@ const SimpleInput = (props) => {
           id="email"
           onChange={emailInputChangeHandler}
           onBlur={emailInputBlurHandler}
-          value={enteredName}
+          value={enteredEmail}
         />
         {nameInputIsInvalid && (
           <p className="error-text">Please enter a valid email</p>
