@@ -20,8 +20,16 @@ const SimpleInput = (props) => {
     setEnteredName(event.target.value);
   };
 
+  const emailInputChangeHandler = (event) => {
+    setEnteredEmail(event.target.value);
+  };
+
   const nameInputBlurHandler = (event) => {
     setEnteredNameTouched(true);
+  };
+
+  const emailInputBlurHandler = (event) => {
+    setEnteredEmailTouch(event.target.value);
   };
 
   const formSubmissionHandler = (event) => {
@@ -62,8 +70,8 @@ const SimpleInput = (props) => {
         <input
           type="email"
           id="email"
-          onChange={nameInputChangeHandler}
-          onBlur={nameInputBlurHandler}
+          onChange={emailInputChangeHandler}
+          onBlur={emailInputBlurHandler}
           value={enteredName}
         />
         {nameInputIsInvalid && (
