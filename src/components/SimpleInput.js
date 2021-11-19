@@ -54,6 +54,19 @@ const SimpleInput = (props) => {
           <p className="error-text">name must not be empty</p>
         )}
       </div>
+      <div className={inputNameClasses}>
+        <label htmlFor="email">Your E-mail</label>
+        <input
+          type="email"
+          id="email"
+          onChange={nameInputChangeHandler}
+          onBlur={nameInputBlurHandler}
+          value={enteredName}
+        />
+        {nameInputIsInvalid && (
+          <p className="error-text">Please enter a valid email</p>
+        )}
+      </div>
       <div className="form-actions">
         <button disabled={!formIsValid}>Submit</button>
       </div>
