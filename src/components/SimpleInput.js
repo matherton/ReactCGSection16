@@ -5,10 +5,13 @@ const SimpleInput = (props) => {
   const [enteredNameTouched, setEnteredNameTouched] = useState(false);
 
   const [enteredEmail, setEnteredEmail] = useState("");
-  const [enteredEmailTouch, setEnteredEmailTouch] = useState(false);
+  const [enteredEmailTouched, setEnteredEmailTouched] = useState(false);
 
   const enteredNameIsValid = enteredName.trim() !== "";
   const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
+
+  const enteredEmailIsValid = enteredEmail.includes("@");
+  const enteredEmailIsInvalid = !enteredEmailIsValid && enteredEmailTouched;
 
   let formIsValid = false;
 
@@ -29,7 +32,7 @@ const SimpleInput = (props) => {
   };
 
   const emailInputBlurHandler = (event) => {
-    setEnteredEmailTouch(event.target.value);
+    setEnteredEmailTouched(event.target.value);
   };
 
   const formSubmissionHandler = (event) => {
@@ -45,6 +48,7 @@ const SimpleInput = (props) => {
     setEnteredName("");
     setEnteredNameTouched(false); //setEnteredNameTouched back to false at end of function so that warning is not displayed by default when form is first run.
     setEnteredEmail("");
+    setEnteredEmailTouched(false);
   };
 
   const inputNameClasses = nameInputIsInvalid
