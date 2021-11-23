@@ -1,13 +1,17 @@
 import { useReducer } from "react";
 
+const initialInputState = {
+  value: "",
+  isTouched: false,
+};
+
 const inputStateReducer = (state, action) => {
-  return {
-    value: "",
-    isTouched: false,
-  };
+  return inputStateReducer;
 };
 
 const useInput = (validateValue) => {
+  useReducer(inputStateReducer, initialInputState);
+
   const [enteredValue, setEnteredValue] = useState("");
   const [isTouched, setIsTouched] = useState(false);
 
