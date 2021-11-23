@@ -1,4 +1,11 @@
-import { useState } from "react";
+import { useReducer } from "react";
+
+const inputStateReducer = (state, action) => {
+  return {
+    value: "",
+    isTouched: false,
+  };
+};
 
 const useInput = (validateValue) => {
   const [enteredValue, setEnteredValue] = useState("");
