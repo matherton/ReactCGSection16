@@ -6,6 +6,12 @@ const initialInputState = {
 };
 
 const inputStateReducer = (state, action) => {
+  if (action.type === "INPUT") {
+  }
+  if (action.type === "BLUR") {
+  }
+  if (action.type === "RESET") {
+  }
   return inputStateReducer;
 };
 
